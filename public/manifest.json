@@ -1,0 +1,42 @@
+{
+    "name": "Comment All",
+    "manifest_version": 3,
+    "version": "0.1",
+    "description": "Allows user to comment any page with a single command",
+    "permissions": ["activeTab", "scripting", "unlimitedStorage"],
+    "background": {
+        "service_worker": "js/background.js"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["js/content.js"],
+            "run_at": "document_start"
+        }
+    ],
+    "commands": {
+        "comment": {
+            "suggested_key": {
+                "default": "Alt+C"
+            },
+            "description": "Add comment at the current mouse position"
+        }
+    },
+    "action": {
+        "default_title": "Comment All",
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/icons/16x.png",
+            "32": "/icons/32x.png",
+            "64": "/icons/64x.png",
+            "128": "/icons/128x.png"
+        }
+    },
+    "icons": {
+        "16": "/icons/16x.png",
+        "32": "/icons/32x.png",
+        "64": "/icons/64x.png",
+        "128": "/icons/128x.png"
+    }
+}

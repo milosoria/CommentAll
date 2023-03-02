@@ -1,0 +1,34 @@
+{
+    "env": {
+        "browser": true
+    },
+    "extends": [
+        "prettier",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "ecmafeatures": {
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "rules": {
+        "object-curly-spacing": ["error", "always"],
+        "linebreak-style": 0,
+        "quotes": ["error", "single"],
+        "sort-imports": [
+            "error",
+            {
+                "ignoreCase": false,
+                "ignoreDeclarationSort": true,
+                "ignoreMemberSort": false,
+                "allowSeparatedGroups": false
+            }
+        ]
+    },
+    "plugins": ["@typescript-eslint"]
+}
